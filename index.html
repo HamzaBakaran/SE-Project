@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title >HB GYM</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/jQuerySPApp.css" />
+  <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"></link>
+      <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" id="name"  ></a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+           <button class="btn btn-outline-light text-light bg-dark" type="button" onclick="UserLoginService.logout()">Logout</button>
+        </div>
+      </div>
+    </header>
+
+<div class="container-fluid bg-yellow ">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item" >
+            <a class="nav-link active text-light bg-dark" aria-current="page" href="#dashboard">
+
+              <span data-feather="home" class="fa fa-dashboard"></span>
+              Dashboard
+
+            </a>
+          </li>
+          <li class="nav-item bg-dark">
+            <a class="nav-link text-light bg-dark" href="#users">
+              <span data-feather="file" class="fa fa-users"></span>
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light bg-dark" href="#memberships">
+              <span data-feather="shopping-cart" class="fa fa-address-card" ></span>
+              Memberships
+            </a>
+          </li>
+          <li class="nav-item  bg-dark">
+            <a class="nav-link text-light bg-dark" href="#employes">
+              <span data-feather="users" class="fa-regular fa-user"></span>
+              Employes
+            </a>
+          </li>
+          <li class="nav-item  bg-dark">
+            <a class="nav-link text-light bg-dark" href="#membership_plans">
+              <span data-feather="users" class="fa fa-sliders"></span>
+              Manage membership plans
+            </a>
+          </li>
+
+
+
+     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-light bg-dark">
+          <span></span>
+          <a class="link-secondary text-light bg-dark" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link text-light bg-dark" href="#">
+              <span data-feather="file-text"></span>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light bg-dark" href="#">
+              <span data-feather="file-text"></span>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light bg-dark" href="#">
+              <span data-feather="file-text "></span>
+
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light bg-dark" href="#">
+              <span data-feather="file-text "></span>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="jqueryspapp" role="main">
+         <section id="dashboard" data-load="dashboard.html" ></section>
+         <section id="users" ></section>
+         <section id="memberships" ></section>
+         <section id="employes" ></section>
+         <section id="membership_plans" ></section>
+
+
+
+  </div>
+</div>
+
+
+
+  </body>
+  <script src="js/jquery-3.6.0.min.js"></script>
+
+   <script src="js/jQuerySPApp.js"></script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="js/jquery.validate.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script src="js/user-service.js"></script>
+
+<script src="js/membership-service.js"></script>
+
+<script src="js/login-service.js"></script>
+
+<script src="js/user-dashboard-service.js"></script>
+
+<script src="js/util.js"></script>
+
+<script src="js/employe-service.js"></script>
+
+<script src="js/membership-plans-service.js"></script>
+
+<script src="js/dashboard-service.js"></script>
+
+
+
+<div class="modal fade" id="membershipModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">ToDos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+
+            <div id="user-membership" class="list-group">
+              <div class="list-group-item">
+                <button class="btn btn-danger btn-sm float-end">delete</button>
+                <p class="list-group-item-text">kkkkkk</p>
+              </div>
+              <div class="list-group-item">
+                <button class="btn btn-danger btn-sm float-end">delete</button>
+                <p class="list-group-item-text">kkkkkk</p>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+          <form id="add-membership-form" class="form">
+            <input name="user_id" type="hidden" />
+            <div class="row" style="padding: 20px;">
+              <div class="col-sm-4">
+                <input name="description" type="text" class="form-control required" placeholder="Todo">
+              </div>
+              <div class="col-sm-4">
+                <input name="created" type="date" class="form-control required" placeholder="Created">
+              </div>
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary mb-2">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer"> </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+   $(document).ready(function() {
+     var app = $.jQuerySPApp({
+     defaultView  : "dashboard",
+     templateDir  : "./views/",
+     pageNotFound : "error_404"}); // initialize
+
+     // define routes
+     app.route({
+       view: 'dashboard',
+       onCreate: function() { UserService.init();},
+       onReady: function() {UserService.init(); }
+     });
+     app.route({view: 'users', load: 'users.html',
+     onCreate: function() { UserService.init();},
+     onReady: function() {UserService.init(); }
+    });
+    app.route({view: 'memberships', load: 'memberships.html',
+    onCreate: function() { MembershiService.init();},
+    onReady: function() {MemmbershipService.init(); }
+   });
+   app.route({view: 'employes', load: 'employes.html',
+   onCreate: function() {EmployeService.init(); },
+   onReady: function() {EmployeService.init(); }
+  });
+  app.route({view: 'membership_plans', load: 'membership_plans.html',
+  onCreate: function() {MembershipPlanService.init(); },
+  onReady: function() {MembershipPlanService.init(); }
+ });
+
+
+     // run app
+     app.run();
+   });
+ </script>
+
+<script>
+
+/*
+var token = localStorage.getItem("token");
+  if (token){
+    UserService.init();
+
+  }else{
+    window.location.replace("login.html");
+  }
+  */
+  if (!window.localStorage.getItem("token")){
+            window.location = "login.html";
+          }else{
+            var user_info = parse_jwt(window.localStorage.getItem("token"));
+            if (user_info.role == "admin"){
+              //window.location = "index.html";
+              //$.('body').show();
+            }else{
+              window.location = "views/singleuser.html";
+            }
+          }
+
+
+
+</script>
+</html>
