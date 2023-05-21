@@ -89,6 +89,7 @@ Flight::route('GET /users/@id', function($id){
 *    				@OA\Property(property="name", type="string", example="Novi User",	description="Name"),
 *    				@OA\Property(property="description", type="string", example="bla bla",	description="description"),
 *    				@OA\Property(property="email", type="string", example="hamzabakaran@gmail.com",	description="Email"),
+*    				@OA\Property(property="role", type="string", example="admin",	description="ROle"),
 *    				@OA\Property(property="password", type="string", example="81dc9bdb52d04dc20036dbd8313ed055",	description="Password" )
 *        )
 *     )),
@@ -121,7 +122,8 @@ Flight::route('POST /register', function(){
 *    				@OA\Property(property="name", type="string", example="Novi User",	description="Name"),
 *    				@OA\Property(property="description", type="string", example="bla bla",	description="description"),
 *    				@OA\Property(property="email", type="string", example="hamzabakaran@gmail.com",	description="Email"),
-*    				@OA\Property(property="password", type="string", example="81dc9bdb52d04dc20036dbd8313ed055",	description="Password" )
+*    				@OA\Property(property="role", type="string", example="admin",	description="Role"),
+*    				@OA\Property(property="password", type="string", example="1234",	description="Password" )
 *        )
 *     )),
 *     @OA\Response(
