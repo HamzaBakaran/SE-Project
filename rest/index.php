@@ -36,37 +36,42 @@ Flight::map('error', function(Exception $ex){
 */
 
 
-/*
-// middleware method for login
-Flight::route('/*', function(){
-  //return TRUE;
-  //perform JWT decode
-  $path = Flight::request()->url;
-  if ($path == '/login' || $path == '/docs.json' || $path == '/membership' || $path == '/register' || $path == '/employereg' || $path == '/usermembership' ) return TRUE; // exclude login route from middleware
 
-  $headers = getallheaders();
-  if (@!$headers['Authorization']){
-    Flight::json(["message" => "Authorization is missing"], 403);
-    return FALSE;
-  }else{
-    try {
-      $decoded = (array)JWT::decode($headers['Authorization'], new Key(Config::JWT_SECRET(), 'HS256'));
-      Flight::set('user', $decoded);
-      return TRUE;
-    } catch (\Exception $e) {
-      Flight::json(["message" => "Authorization token is not valid"], 403);
-      return FALSE;
+// middleware method for login
+Flight::route(
+    '/*', function () {
+        //return TRUE;
+        //perform JWT decode
+        $path = Flight::request()->url;
+        if ($path == '/login' || $path == '/docs.json' || $path == '/membership' || $path == '/register' || $path == '/employereg' || $path == '/usermembership' ) { return true; // exclude login route from middleware
+        }
+
+        $headers = getallheaders();
+        if (@!$headers['Authorization']) {
+            Flight::json(["message" => "Authorization is missing"], 403);
+            return false;
+        }else{
+            try {
+                $decoded = (array)JWT::decode($headers['Authorization'], new Key(Config::JWT_SECRET(), 'HS256'));
+                Flight::set('user', $decoded);
+                return true;
+            } catch (\Exception $e) {
+                Flight::json(["message" => "Authorization token is not valid"], 403);
+                return false;
+            }
+        }
     }
-  }
-});
-*/
+);
+
 
 /* REST API documentation endpoint */
-Flight::route('GET /docs.json', function(){
-  $openapi = \OpenApi\scan('routes');
-  header('Content-Type: application/json');
-  echo $openapi->toJson();
-});
+Flight::route(
+    'GET /docs.json', function () {
+        $openapi = \OpenApi\scan('routes');
+        header('Content-Type: application/json');
+        echo $openapi->toJson();
+    }
+);
 
 
 

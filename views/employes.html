@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Employes </h1>
-  <button class="btn btn-light btn-lg text-light bg-dark" data-bs-toggle="modal" data-bs-target="#addEmployeModal">Add new employe</button>
+  <button class="btn btn-light btn-lg text-light bg-dark" data-bs-toggle="modal" data-bs-target="#addEmployeModal">Add
+    new employe</button>
 
   <script src="js/jquery-3.6.0.min.js"></script>
 
@@ -17,17 +18,17 @@
 
 
 
-<script src="./js/employe-service.js"></script>
+  <script src="./js/employe-service.js"></script>
 
-<div class="modal fade" id="addEmployeModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form id="addEmployeForm">
-        <div class="modal-header">
-          <h5 class="modal-title">Employe</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
+  <div class="modal fade" id="addEmployeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="addEmployeForm">
+          <div class="modal-header">
+            <h5 class="modal-title">Employe</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
             <div class="form-group">
               <label>Name</label>
               <input name="name" type="text" class="form-control required" placeholder="Enter name">
@@ -48,26 +49,26 @@
               <label>Position</label>
               <input name="position" type="text" class="form-control required" placeholder="Enter position">
             </div>
-            </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="modal fade" id="updateEmployeModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form id="updateEmployeForm">
-        <div class="modal-header">
-          <h5 class="modal-title">Employe</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-           <input type="hidden" name="id" />
+  <div class="modal fade" id="updateEmployeModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="updateEmployeForm">
+          <div class="modal-header">
+            <h5 class="modal-title">Employe</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" name="id" />
             <div class="form-group">
               <label>Name</label>
               <input name="name" type="text" class="form-control required" placeholder="Enter name">
@@ -88,15 +89,15 @@
               <label>Position</label>
               <input name="position" type="text" class="form-control required" placeholder="Enter position">
             </div>
-            </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
 
 
@@ -104,11 +105,11 @@
 </div>
 <div class="container marketing" style="margin-top:10px;">
 
-<div class="row">
-  <div>
+  <div class="row">
+    <div>
 
+    </div>
   </div>
-</div>
 
 
 
@@ -145,12 +146,10 @@
 <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
 <script>
   var token = localStorage.getItem("token");
-    if (token){
-      EmployeService.init();;
+  if (token) {
+    EmployeService.init();;
 
-    }else{
-      window.location.replace("login.html");
-    }
-
-
+  } else {
+    window.location.replace("login.html");
+  }
 </script>

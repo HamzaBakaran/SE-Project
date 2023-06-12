@@ -8,16 +8,18 @@ use Firebase\JWT\Key;
 /**
  * @OA\Get(path="/membership", tags={"membership"}, security={{"ApiKeyAuth": {}}},
  *         summary="Return all  membership from the API. ",
- *         @OA\Response( response=200, description="List of mebership.")
+ *         @OA\Response(               response=200, description="List of mebership.")
  * )
  */
 
 /**
 * List all todos
 */
-Flight::route('GET /membership', function(){
-  Flight::json(Flight::membershipService()->get_all());
-});
+Flight::route(
+    'GET /membership', function () {
+        Flight::json(Flight::membershipService()->get_all());
+    }
+);
 
 /**
 * List invidiual todo
@@ -25,13 +27,15 @@ Flight::route('GET /membership', function(){
 /**
  * @OA\Get(path="/membership/{id}", tags={"membership"}, security={{"ApiKeyAuth": {}}},
  *      summary="Return  membership by user id  from the API. ",
- *     @OA\Parameter(in="path", name="id", example=1, description="Id of membership"),
- *     @OA\Response(response="200", description="Fetch individual note")
+ *     @OA\Parameter(in="path",         name="id", example=1, description="Id of membership"),
+ *     @OA\Response(response="200",     description="Fetch individual note")
  * )
  */
-Flight::route('GET /membership/@id', function($id){
-  Flight::json(Flight::membershipService()->get_by_id($id));
-});
+Flight::route(
+    'GET /membership/@id', function ($id) {
+        Flight::json(Flight::membershipService()->get_by_id($id));
+    }
+);
 
 /**
 * add todo
@@ -41,11 +45,11 @@ Flight::route('GET /membership/@id', function($id){
 *     path="/membership",
 *     description="Proba",
 *     tags={"membership"},
-*     @OA\RequestBody(description="Basic user info", required=true,
+*     @OA\RequestBody(description="Basic          user info", required=true,
 *       @OA\MediaType(mediaType="application/json",
-*    			@OA\Schema(
-*    				@OA\Property(property="description", type="string", example="test",	description="description"),
-*    				@OA\Property(property="price", type="double", example="50",	description="description"),
+*                @OA\Schema(
+*                    @OA\Property(property="description",        type="string", example="test",    description="description"),
+*                    @OA\Property(property="price",              type="double", example="50",    description="description"),
 *
 *        )
 *     )),
@@ -59,9 +63,11 @@ Flight::route('GET /membership/@id', function($id){
 *     )
 * )
 */
-Flight::route('POST /membership', function(){
-  Flight::json(Flight::membershipService()->add(Flight::request()->data->getData()));
-});
+Flight::route(
+    'POST /membership', function () {
+        Flight::json(Flight::membershipService()->add(Flight::request()->data->getData()));
+    }
+);
 
 /**
 * update todo
@@ -71,12 +77,12 @@ Flight::route('POST /membership', function(){
 *     path="/membership/{id}", security={{"ApiKeyAuth": {}}},
 *     description="Update user note",
 *     tags={"membership"},
-*     @OA\Parameter(in="path", name="id", example=1, description="Note ID"),
-*     @OA\RequestBody(description="Basic note info", required=true,
+*     @OA\Parameter(in="path",                    name="id", example=1, description="Note ID"),
+*     @OA\RequestBody(description="Basic          note info", required=true,
 *       @OA\MediaType(mediaType="application/json",
-*    			@OA\Schema(
-*    				@OA\Property(property="description", type="string", example="test",	description="description"),
-*    				@OA\Property(property="price", type="double", example="50",	description="description"),
+*                @OA\Schema(
+*                    @OA\Property(property="description",        type="string", example="test",    description="description"),
+*                    @OA\Property(property="price",              type="double", example="50",    description="description"),
 *        )
 *     )),
 *     @OA\Response(
@@ -89,11 +95,13 @@ Flight::route('POST /membership', function(){
 *     )
 * )
 */
-Flight::route('PUT /membership/@id', function($id){
-  $data = Flight::request()->data->getData();
-  Flight::json(Flight::membershipService()->update(Flight::get('user'), $id, $data));
+Flight::route(
+    'PUT /membership/@id', function ($id) {
+        $data = Flight::request()->data->getData();
+        Flight::json(Flight::membershipService()->update(Flight::get('user'), $id, $data));
 
-});
+    }
+);
 /**
 * @OA\Delete(
 *     path="/membership/{id}", security={{"ApiKeyAuth": {}}},
@@ -114,10 +122,12 @@ Flight::route('PUT /membership/@id', function($id){
 /**
 * delete todo
 */
-Flight::route('DELETE /membership/@id', function($id){
-  Flight::membershipService()->delete($id);
-  Flight::json(["message" => "deleted"]);
-});
+Flight::route(
+    'DELETE /membership/@id', function ($id) {
+        Flight::membershipService()->delete($id);
+        Flight::json(["message" => "deleted"]);
+    }
+);
 
 
 ?>
