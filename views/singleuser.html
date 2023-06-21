@@ -12,16 +12,9 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
   <link rel="stylesheet" href="../css/bootstrap.min.css">
-
   <link rel="stylesheet" href="../css/jQuerySPApp.css" />
-
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  </link>
-
-
-
 </head>
 
 <body>
@@ -29,8 +22,7 @@
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"></a>
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">HB GYM</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -41,57 +33,16 @@
     </div>
   </header>
 
-
-
-
-
-
-
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-
-  <script src="../js/util.js"></script>
-
-  <script src="../js/jquery-3.6.0.min.js"></script>
-
-  <script src="../js/jQuerySPApp.js"></script>
-
-  <script src="../js/bootstrap.bundle.min.js"></script>
-
-  <script src="../js/jquery.validate.min.js"></script>
-
-  <script src="../js/user-dashboard-service.js"></script>
-
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  </link>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  </link>
-
-
   <div class="container marketing" style="margin-top:10px;">
-
-    <div class="row">
-      <div>
-
-      </div>
-    </div>
-
-
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-
     <div class="jumbotron">
       <div class="row w-100">
         <div class="col-md-3">
           <div class="card border-info mx-sm-1 p-3">
-            <div class="card border-info shadow text-info text-center p-3 my-card"><span class="fa fa-id-badge" </span>
-                </div> <div class="text-info text-center mt-3">
-                <h4>My ID</h4>
+            <div class="card border-info shadow text-info text-center p-3 my-card">
+              <span class="fa fa-id-badge"></span>
+            </div>
+            <div class="text-info text-center mt-3">
+              <h4>My ID</h4>
             </div>
             <div class="text-info text-center mt-2" id="end">
               <h1></h1>
@@ -100,8 +51,9 @@
         </div>
         <div class="col-md-3">
           <div class="card border-success mx-sm-1 p-3">
-            <div class="card border-success shadow text-success text-center p-3 my-card"><span class="fa fa-eye"
-                aria-hidden="true"></span></div>
+            <div class="card border-success shadow text-success text-center p-3 my-card">
+              <span class="fa fa-eye" aria-hidden="true"></span>
+            </div>
             <div class="text-success text-center mt-3">
               <h4>Membership validity</h4>
             </div>
@@ -112,8 +64,9 @@
         </div>
         <div class="col-md-3">
           <div class="card border-dark mx-sm-1 p-3">
-            <div class="card border-dark shadow text-dark text-center p-3 my-card"><span class="fa fa-money"
-                aria-hidden="true"></span></div>
+            <div class="card border-dark shadow text-dark text-center p-3 my-card">
+              <span class="fa fa-money" aria-hidden="true"></span>
+            </div>
             <div class="text-dark text-center mt-3">
               <h4>Membership name</h4>
             </div>
@@ -122,63 +75,47 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
-    <h1 class="h2 ">Recents</h1>
-
+    <h1 class="h2">Recents</h1>
 
     <table id="user-dashboard-membership-table-list" class="table table-bordered">
-      <thead id="user-dashboard-membership-table">
+      <thead>
         <tr>
-          <th class="bg-dark text-light"> ID</th>
+          <th class="bg-dark text-light">ID</th>
           <th class="bg-dark text-light">Description</th>
           <th class="bg-dark text-light">Start date</th>
           <th class="bg-dark text-light">End date</th>
         </tr>
-
+      </thead>
+      <tbody></tbody>
     </table>
   </div>
 
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="../js/util.js"></script>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../js/jQuerySPApp.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery.validate.min.js"></script>
+  <script src="../js/user-dashboard-service.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-
-
-  <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
   <script>
-    /*
-  var token = localStorage.getItem("token");
-    if (token){
-      DashboardService.init();
-
-    }else{
-      window.location.replace("login.html");
-    }
-    $(document).ready(function () {
-  $('#membership-table-list').DataTable();
-});
-*/
-    /*var token = localStorage.getItem("token");
-      if (token){
-        UserDashboardService.init();
-
-      }else{
-        window.location.replace("../login.html");
-      }
-      */
     var token = localStorage.getItem("token");
     if (token) {
-      UserDashboardService.init();;
-
+      UserDashboardService.init();
     } else {
       window.location.replace("../login.html");
     }
-
 
     function doLogout() {
       window.localStorage.clear();
       window.location = "../login.html";
     }
   </script>
+
+</body>
 
 </html>
