@@ -32,34 +32,27 @@ var MembershipService = {
         xhr.setRequestHeader("Authorization", localStorage.getItem("token"));
       },
       success: function (data) {
-        $("#membership-table-full-list").html("");
+       // $("#membership-table-full").html("");
         var html = "";
         for (let i = 0; i < data.length; i++) {
           html +=
-            `<tr>
-                  <th class="bg-dark text-light">ID</th>
-                  <th class="bg-dark text-light">Name</th>
-                  <th class="bg-dark text-light">description</th>
-                  <th class="bg-dark text-light">Start Date</th>
-                  <th class="bg-dark text-light">End Date</th>
-                  <th class="bg-dark text-light">Actions</th>
-                </tr>
-              <tr>
-                                      <th>` +
+            `
+             <tr>
+                                      <td>` +
             data[i].id +
-            ` </th>
-                                      <th>` +
+            ` </td>
+                                      <td>` +
             data[i].name +
-            ` </th>
-                                      <th>` +
+            ` </td>
+                                      <td>` +
             data[i].description +
-            ` </th>
-                                      <th>` +
+            ` </td>
+                                      <td>` +
             data[i].start_date +
-            `</th>
-                                      <th>` +
+            `</td>
+                                      <td>` +
             data[i].end_date +
-            `</th>
+            `</td>
                                       <td>
                                         <button type="button" class="btn btn-success membership-button" onclick="MembershipService.get(` +
             data[i].id +
@@ -72,7 +65,8 @@ var MembershipService = {
         }
         //  let oldHtml = $("#membership-table-full-list").html();
         //  $("#membership-table-full-list").html(oldHtml+html);
-        $("#membership-table-full-list").html(html);
+        $("#membership-table-full tbody").html(html);
+        $("#membership-table-full").DataTable();
       },
       error: function (XMLHttpRequest, textStatus, errorThrown) {
         toastr.error(XMLHttpRequest.responseJSON.message);
@@ -90,9 +84,10 @@ var MembershipService = {
         xhr.setRequestHeader("Authorization", localStorage.getItem("token"));
       },
       success: function (result) {
-        $("#membership-table-full-list").html(
-          '<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>'
-        );
+        //$("#membership-table-full").html(
+          //'<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>'
+        //);
+        //$("#membership-table-full").DataTable();
         MembershipService.list(); // perf optimization
         $("#addMembershipModal").modal("hide");
         $(".modal-backdrop").remove();
@@ -112,11 +107,14 @@ var MembershipService = {
         xhr.setRequestHeader("Authorization", localStorage.getItem("token"));
       },
       success: function (result) {
-        $("#membership-table-full-list").html(
+        $("#membership-table-full tbody").html(
           '<div class="spinner-border" role="status"> <span class="sr-only"></span>  </div>'
         );
+        $("#membership-table-full").DataTable();
         MembershipService.list();
+        location.reload();
         toastr.success("Membership deleted!");
+        
       },
     });
   },
@@ -129,7 +127,7 @@ var MembershipService = {
         xhr.setRequestHeader("Authorization", localStorage.getItem("token"));
       },
       success: function (data) {
-        $('#updateMembershipForm input[name="id"]').val(id);
+        $('#updateMembershipForm input[name="id"]').val(data.id);
         $('#updateMembershipForm  input[name="name"]').val(data.name);
         $('#updateMembershipForm  input[name="description"]').val(
           data.description

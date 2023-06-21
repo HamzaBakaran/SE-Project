@@ -1,4 +1,5 @@
 <?php
+
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
@@ -17,7 +18,7 @@ use Firebase\JWT\Key;
 */
 Flight::route(
     'GET /membership', function () {
-        Flight::json(Flight::membershipService()->get_all());
+        Flight::json(Flight::membershipService()->getAll());
     }
 );
 
@@ -33,7 +34,7 @@ Flight::route(
  */
 Flight::route(
     'GET /membership/@id', function ($id) {
-        Flight::json(Flight::membershipService()->get_by_id($id));
+        Flight::json(Flight::membershipService()->getById($id));
     }
 );
 

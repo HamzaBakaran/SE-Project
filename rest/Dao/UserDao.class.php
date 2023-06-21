@@ -1,29 +1,29 @@
 <?php
-require_once __DIR__.'/BaseDao.class.php';
+
+require_once __DIR__ . '/BaseDao.class.php';
 
 class UserDao extends BaseDao
 {
     /**
-     * constructor of dao class
+     * Constructor of the DAO class.
      */
     public function __construct()
     {
         parent::__construct("users");
     }
 
-    public function get_user_by_email($email)
+    public function getUserByEmail($email)
     {
-        return $this->query_unique("SELECT * FROM users WHERE email = :email", ['email' => $email]);
+        return $this->queryUnique(
+            "SELECT * FROM users 
+             WHERE email = :email", ['email' => $email]);
     }
-    public function get_user_count()
+
+    public function getUserCount()
     {
-        return $this->query_single(
-            " SELECT COUNT(users.`id`) as count
-FROM users"
+        return $this->querySingle(
+            "SELECT COUNT(users.`id`) AS count
+             FROM users"
         );
     }
-  
-
 }
-
-?>

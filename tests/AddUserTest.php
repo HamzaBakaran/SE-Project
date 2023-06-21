@@ -26,7 +26,7 @@ class AddUserTest extends TestCase
         $addedUser = $this->dao->add($user);
 
         // Retrieve the user by ID
-        $retrievedUser = $this->dao->get_by_id($addedUser['id']);
+        $retrievedUser = $this->dao->getById($addedUser['id']);
 
         $this->assertEquals($user['name'], $retrievedUser['name']);
         $this->assertEquals($user['description'], $retrievedUser['description']);

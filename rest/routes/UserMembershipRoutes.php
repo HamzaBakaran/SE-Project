@@ -17,7 +17,7 @@ use Firebase\JWT\Key;
 */
 Flight::route(
     'GET /usermembership', function () {
-        Flight::json(Flight::userMembershipService()->get_users_membership());
+        Flight::json(Flight::userMembershipService()->getUsersMembership());
     }
 );
 /**
@@ -33,7 +33,7 @@ Flight::route(
 */
 Flight::route(
     'GET /usermembership/@id', function ($id) {
-        Flight::json(Flight::userMembershipService()->get_users_membership_by_id($id));
+        Flight::json(Flight::userMembershipService()->getUsersMembershipById($id));
     }
 );
 
@@ -137,7 +137,7 @@ Flight::route(
 */
 Flight::route(
     'GET /earned', function () {
-        Flight::json(Flight::userMembershipService()->get_earned());
+        Flight::json(Flight::userMembershipService()->getEarned());
     }
 );
 /**
@@ -153,7 +153,7 @@ Flight::route(
 */
 Flight::route(
     'GET /last_active/@id', function ($id) {
-        Flight::json(Flight::userMembershipService()->get_last_active_membership($id));
+        Flight::json(Flight::userMembershipService()->getLastActiveMembership($id));
     }
 );
 /**
@@ -169,7 +169,7 @@ Flight::route(
 */
 Flight::route(
     'GET /last_memberships/@id', function ($id) {
-        Flight::json(Flight::userMembershipService()->get_last_memberships($id));
+        Flight::json(Flight::userMembershipService()->getLastMemberships($id));
     }
 );
 

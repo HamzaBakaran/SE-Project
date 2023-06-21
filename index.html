@@ -8,14 +8,13 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.84.0">
   <title>HB GYM</title>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/jQuerySPApp.css" />
   <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
-  </link>
-  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 
 </head>
 
@@ -234,10 +233,10 @@
       view: 'memberships',
       load: 'memberships.html',
       onCreate: function () {
-        MembershiService.init();
+        MembershipService.init();
       },
       onReady: function () {
-        MemmbershipService.init();
+        MembershipService.init();
       }
     });
     app.route({

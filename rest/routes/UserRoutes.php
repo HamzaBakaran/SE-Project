@@ -30,7 +30,7 @@ use Firebase\JWT\Key;
 Flight::route(
     'POST /login', function () {
         $login = Flight::request()->data->getData();
-        $user = Flight::userDao()->get_user_by_email($login['email']);
+        $user = Flight::userDao()->getUserByEmail($login['email']);
 
         if (isset($user['id'])) {
             if($user['password'] == $login['password']) {
@@ -61,7 +61,7 @@ Flight::route(
 */
 Flight::route(
     'GET /users', function () {
-        Flight::json(Flight::userService()->get_all());
+        Flight::json(Flight::userService()->getAll());
     }
 );
 /**
@@ -77,7 +77,7 @@ Flight::route(
 */
 Flight::route(
     'GET /users/@id', function ($id) {
-        Flight::json(Flight::userService()->get_by_id($id));
+        Flight::json(Flight::userService()->getById($id));
     }
 );
 
@@ -190,7 +190,7 @@ Flight::route(
 */
 Flight::route(
     'GET /userscount', function () {
-        Flight::json(Flight::userService()->get_user_count());
+        Flight::json(Flight::userService()->getUserCount());
     }
 );
 /**
@@ -205,7 +205,7 @@ Flight::route(
 */
 Flight::route(
     'GET /usersactive', function () {
-        Flight::json(Flight::userMembershipService()->get_users_active());
+        Flight::json(Flight::userMembershipService()->getUsersActive());
     }
 );
 

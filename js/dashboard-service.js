@@ -1,3 +1,4 @@
+
 var DashboardService = {
         init: function(){
           DashboardService.count();
@@ -141,17 +142,19 @@ var DashboardService = {
             success: function(data) {
               //$("#membership-table").html("");
               var html = "";
-            for(let i = 0; i < 5; i++){
-              html += `<tr>
-                                      <th>`+data[i].id+` </th>
-                                      <th>`+data[i].name+` </th>
-                                      <th>`+data[i].description+` </th>
-                                      <th>`+data[i].start_date+`</th>
-                                      <th>`+data[i].end_date+`</th>
-                                    </tr>`;
-            }
-            let oldHtml = $("#membership-table").html();
-            $("#membership-table").html(oldHtml+html);
+              for (let i = 0; i < data.length; i++) {
+                html += `<tr>
+                          <td>` + data[i].id + `</td>
+                          <td>` + data[i].name + `</td>
+                          <td>` + data[i].description + `</td>
+                          <td>` + data[i].start_date + `</td>
+                          <td>` + data[i].end_date + `</td>
+                        </tr>`;
+              }
+              $("#membership-table-list tbody").html(html);
+      
+              // Apply DataTable to the table
+              $("#membership-table-list").DataTable();
           },
           error: function(XMLHttpRequest, textStatus, errorThrown) {
             toastr.error(XMLHttpRequest.responseJSON.message);

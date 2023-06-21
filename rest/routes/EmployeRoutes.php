@@ -12,7 +12,7 @@ use Firebase\JWT\Key;
 
 Flight::route(
     'GET /employe', function () {
-        Flight::json(Flight::employeService()->get_all());
+        Flight::json(Flight::employeService()->getAll());
     }
 );
 
@@ -25,7 +25,7 @@ Flight::route(
  */
 Flight::route(
     'GET /employe/@id', function ($id) {
-        Flight::json(Flight::employeService()->get_employe_by_id($id));
+        Flight::json(Flight::employeService()->getEmployeById($id));
     }
 );
 
@@ -129,7 +129,7 @@ Flight::route(
 
 Flight::route(
     'GET /employes_active', function () {
-        Flight::json(Flight::employeService()->get_employe_count());
+        Flight::json(Flight::employeService()->getEmployeCount());
     }
 );
 

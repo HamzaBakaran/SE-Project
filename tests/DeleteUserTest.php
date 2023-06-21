@@ -30,7 +30,7 @@ class DeleteUserTest extends TestCase
         $this->dao->delete($userId);
 
         // Verify that the user no longer exists in the database
-        $deletedUser = $this->dao->get_by_id($userId);
+        $deletedUser = $this->dao->getById($userId);
         $this->assertFalse($deletedUser, 'User should be deleted');
     }
 }

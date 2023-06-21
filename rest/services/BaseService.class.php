@@ -1,7 +1,7 @@
 <?php
+
 abstract class BaseService
 {
-
     protected $dao;
 
     public function __construct($dao)
@@ -9,14 +9,14 @@ abstract class BaseService
         $this->dao = $dao;
     }
 
-    public function get_all()
+    public function getAll()
     {
-        return $this->dao->get_all();
+        return $this->dao->getAll();
     }
 
-    public function get_by_id($id)
+    public function getById($id)
     {
-        return $this->dao->get_by_id($id);
+        return $this->dao->getById($id);
     }
 
     public function add($entity)
@@ -24,7 +24,7 @@ abstract class BaseService
         return $this->dao->add($entity);
     }
 
-    public function update($user,$id, $entity)
+    public function update($user, $id, $entity)
     {
         return $this->dao->update($id, $entity);
     }
@@ -34,4 +34,4 @@ abstract class BaseService
         return $this->dao->delete($id);
     }
 }
-?>
+
